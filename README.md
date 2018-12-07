@@ -4,4 +4,4 @@
 
 Install by running in R:
 
-`devtools::install_github("LSun/cashalpha")`
+`devtools::install_github("LSun/cashr")`
