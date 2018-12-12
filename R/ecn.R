@@ -156,3 +156,23 @@ w.mosek = function (matrix_lik_w, matrix_lik_z, w_prior, w.init = NULL) {
   w <- z$sol$itr$suc - z$sol$itr$slc
   list(w = w, status = status)
 }
+
+#' Calculate the values of standardized Gaussian derivatives at a given set of positions
+#'
+#' @param x
+#' @param gd.order
+#'
+#' @return
+#' @export
+#'
+#' @examples
+std.gaussDeriv <- function (x, gd.order) {
+  hermite = Hermite(gd.order)
+  gd0.std = dnorm(x)
+  std.gd.mat = cbind(gd0.std)
+  for (i in 1 : gd.order) {
+    gd.std = (-1)^i * hermite[[i]](x) * gd0.std / sqrt(factorial(i))
+    std.gd.mat = cbind(std.gd.mat, gd.std)
+  }
+  return(std.gd.mat)
+}
