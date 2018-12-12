@@ -26,9 +26,9 @@ cash = function (x, s = 1,
                  mixsd.mult = sqrt(2),
                  gd.priority = FALSE,
                  control = list(maxiter = 50)) {
-  if (s > 0 & length(s) == 1L) {
-    L <- gd.order
+  L <- gd.order
 
+  if (all(s > 0) & length(s) == 1L) {
     s = rep(s, length(x))
   } else if (length(x) != length(s) | !all(s > 0)) {
     stop("s should either be a positive number or a vector of positive numbers with the same length of x")
