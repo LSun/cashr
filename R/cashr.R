@@ -104,20 +104,42 @@ cash = function (x, s = 1,
   return(output)
 }
 
-#' @export
 
+#' Title
+#'
+#' @param output
+#' @param ...
+#'
+#' @return
+#' @export
+#'
+#' @examples
 summary.cash <- function (output, ...) {
   output[1 : 6]
 }
 
+#' Title
+#'
+#' @param output
+#' @param ...
+#'
+#' @return
 #' @export
-
+#'
+#' @examples
 print.cash <- function (output, ...) {
   print(summary.cash(output, ...))
 }
 
-#' @export
 
+#' Title
+#'
+#' @param output
+#'
+#' @return
+#' @export
+#'
+#' @examples
 get_svalue <- function (output) {
   array_PP <- array_PosProb(output$x, output$s, output$deltaAt0, output$fitted_g$sd, gd.ord = output$gd.order, gd.normalized = TRUE)
   array_PP = aperm(array_PP, c(2, 3, 1))

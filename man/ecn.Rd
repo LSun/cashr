@@ -2,11 +2,14 @@
 % Please edit documentation in R/ecn.R
 \name{ecn}
 \alias{ecn}
-\title{Fit empirical distribution of observed correlated N(0,1) noise using Exchangeable Correlated Noise (ECN) model}
+\title{Title Fit empirical distribution of observed correlated N(0,1) noise using Exchangeable Correlated Noise (ECN) model}
 \usage{
 ecn(z, gd.order = 10, omega.lambda = 10, omega.rho = 0.5,
   omega.pen = NULL)
 }
+\arguments{
+\item{omega.pen}{}
+}
 \description{
-Fit empirical distribution of observed correlated N(0,1) noise using Exchangeable Correlated Noise (ECN) model
+Title Fit empirical distribution of observed correlated N(0,1) noise using Exchangeable Correlated Noise (ECN) model
 }

@@ -1,7 +1,15 @@
-#' @title Fit empirical distribution of observed correlated N(0,1) noise using Exchangeable Correlated Noise (ECN) model
+#' Title Fit empirical distribution of observed correlated N(0,1) noise using Exchangeable Correlated Noise (ECN) model
 #'
+#' @param z
+#' @param gd.order
+#' @param omega.lambda
+#' @param omega.rho
+#' @param omega.pen
+#'
+#' @return
 #' @export
-
+#'
+#' @examples
 ecn = function (z, gd.order = 10, omega.lambda = 10, omega.rho = 0.5, omega.pen = NULL) {
   L <- gd.order
 
@@ -48,14 +56,29 @@ ecn = function (z, gd.order = 10, omega.lambda = 10, omega.rho = 0.5, omega.pen 
   return(output)
 }
 
+#' Title
+#'
+#' @param output
+#' @param ...
+#'
+#' @return
 #' @export
-
+#'
+#' @examples
 summary.ecn <- function (output, ...) {
   output[1 : 4]
 }
 
-#' @export
 
+#' Title
+#'
+#' @param output
+#' @param ...
+#'
+#' @return
+#' @export
+#'
+#' @examples
 print.ecn <- function (output, ...) {
   print(summary.ecn(output))
 }
@@ -74,8 +97,20 @@ gdfit.mom = function (z, gd.ord) {
   return(list(gd.ord = gd.ord, w = w))
 }
 
-#' @export
 
+#' Title
+#'
+#' @param output
+#' @param symm
+#' @param breaks
+#' @param std.norm
+#' @param main
+#' @param legend
+#'
+#' @return
+#' @export
+#'
+#' @examples
 plot.ecn = function (output, symm = TRUE, breaks = 100, std.norm = TRUE, main, legend = TRUE) {
   z <- output$z
   w <- output$omega
