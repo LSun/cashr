@@ -91,8 +91,9 @@ test_that("cash and ecn match the original R + MOSEK reference fit", {
 })
 
 ## Fig. 5 simulation (g1 = 4, sim 234), where the omega constraint is nearly active at z ~ 9.5.
-## cashr 1.0.0 kept the cutting-plane working set across iterations; near-duplicate tail rows
-## stalled the barrier and the fit stopped after a decrease (penloglik -18675.2962).
+## A development version before 1.0.0 kept the cutting-plane working set across iterations;
+## near-duplicate tail rows stalled the barrier and the fit stopped after a decrease
+## (penloglik -18675.2962).
 test_that("no stall when the noise constraint is active in the tail", {
   d <- read.csv(test_path("stall_case", "stall_case.csv"))
   fit <- cash(d$x, d$s)
