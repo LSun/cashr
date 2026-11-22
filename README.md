@@ -1,6 +1,6 @@
 # cashr
 
-Empirical Bayes normal means with **correlated noise**, for large-scale multiple testing with
+Empirical Bayes normal means with correlated noise, for large-scale multiple testing with
 false discovery rate (FDR) control.
 
 > Lei Sun and Matthew Stephens. *Solving the Empirical Bayes Normal Means Problem with Correlated
