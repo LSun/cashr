@@ -2,14 +2,23 @@
 % Please edit documentation in R/ecn.R
 \name{plot.ecn}
 \alias{plot.ecn}
-\title{Title}
+\title{Histogram of z-scores with the fitted ECN density}
 \usage{
-\method{plot}{ecn}(output, symm = TRUE, breaks = 100,
-  std.norm = TRUE, main, legend = TRUE)
+\method{plot}{ecn}(x, breaks = 100, std.norm = TRUE, main = "", legend = TRUE, ...)
 }
 \arguments{
-\item{legend}{}
+\item{x}{an \code{"ecn"} object.}
+
+\item{breaks}{passed to \code{\link[graphics:hist]{graphics::hist()}}.}
+
+\item{std.norm}{also draw the N(0,1) density.}
+
+\item{main}{title.}
+
+\item{legend}{draw a legend.}
+
+\item{...}{further arguments to \code{\link[graphics:hist]{graphics::hist()}}.}
 }
 \description{
-Title
+Histogram of z-scores with the fitted ECN density
 }

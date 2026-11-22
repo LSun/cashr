@@ -2,14 +2,41 @@
 % Please edit documentation in R/ecn.R
 \name{ecn}
 \alias{ecn}
-\title{Title Fit empirical distribution of observed correlated N(0,1) noise using Exchangeable Correlated Noise (ECN) model}
+\title{Fit the exchangeable correlated noise (ECN) model to correlated N(0,1) z-scores}
 \usage{
-ecn(z, gd.order = 10, omega.lambda = 10, omega.rho = 0.5,
-  omega.pen = NULL)
+ecn(
+  z,
+  gd.order = 10,
+  omega.lambda = 10,
+  omega.rho = 0.5,
+  omega.pen = NULL,
+  solver = c("newton", "mosek"),
+  grid = seq(-10, 10, by = 0.001)
+)
 }
 \arguments{
-\item{omega.pen}{}
+\item{z}{vector of z-scores.}
+
+\item{gd.order}{order \eqn{L} of the Gaussian-derivative expansion.}
+
+\item{omega.lambda, omega.rho, omega.pen}{penalty on \eqn{\omega}; see \code{\link[=omega_penalty]{omega_penalty()}}.
+\code{omega.pen} (length \code{gd.order}) overrides the other two.}
+
+\item{solver}{\code{"newton"} (default; fast, no dependencies) or \code{"mosek"} (the 2018
+algorithm: SQUAREM with REBayes and MOSEK; needs Rmosek and a licence).}
+
+\item{grid}{points where \eqn{f(z) \ge 0} is enforced.}
+}
+\value{
+An object of class \code{"ecn"} with \code{omega}, \code{loglik}, \code{gd.order}, \code{z}.
 }
 \description{
-Title Fit empirical distribution of observed correlated N(0,1) noise using Exchangeable Correlated Noise (ECN) model
+Estimates the realized empirical distribution of correlated, marginally N(0,1) z-scores
+as \eqn{f(z) = \sum_{l=0}^L \omega_l \varphi^{(l)}(z)/\sqrt{l!}} by penalised maximum
+likelihood subject to \eqn{f \ge 0}.
+}
+\examples{
+z <- rnorm(1000)
+fit <- ecn(z)
+plot(fit)
 }
