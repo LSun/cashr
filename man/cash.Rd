@@ -45,7 +45,9 @@ on all-null correlated data the \eqn{\pi}-first order can stop at a local optimu
 most observations signal. \code{FALSE} updates \eqn{\pi} first, the cashr 0.2.0 default.}
 
 \item{solver}{\code{"newton"} (default; fast, no dependencies) or \code{"mosek"} (the 2018
-algorithm: SQUAREM with REBayes and MOSEK; needs Rmosek and a licence).}
+algorithm: SQUAREM with REBayes and MOSEK). \code{"mosek"} is optional and needs
+Rmosek (>= 10), REBayes, SQUAREM and a MOSEK licence (free for academics). Rmosek is not on
+CRAN; see \url{https://docs.mosek.com/12.0/rmosek/install-interface.html}.}
 
 \item{tol}{relative tolerance on the objective for the newton solver.}
 

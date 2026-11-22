@@ -23,7 +23,9 @@ ecn(
 \code{omega.pen} (length \code{gd.order}) overrides the other two.}
 
 \item{solver}{\code{"newton"} (default; fast, no dependencies) or \code{"mosek"} (the 2018
-algorithm: SQUAREM with REBayes and MOSEK; needs Rmosek and a licence).}
+algorithm: SQUAREM with REBayes and MOSEK). \code{"mosek"} is optional and needs
+Rmosek (>= 10), REBayes, SQUAREM and a MOSEK licence (free for academics). Rmosek is not on
+CRAN; see \url{https://docs.mosek.com/12.0/rmosek/install-interface.html}.}
 
 \item{grid}{points where \eqn{f(z) \ge 0} is enforced.}
 }

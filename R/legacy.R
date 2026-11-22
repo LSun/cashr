@@ -8,7 +8,8 @@
 legacy_check <- function() {
   for (p in c("Rmosek", "REBayes", "SQUAREM")) {
     if (!requireNamespace(p, quietly = TRUE)) {
-      stop("solver = \"mosek\" needs package ", p, " (and a MOSEK licence); use solver = \"newton\"")
+      stop("solver = \"mosek\" needs package ", p, " (and a MOSEK licence); use solver = \"newton\"",
+           if (p == "Rmosek") paste0(".\nTo install Rmosek, see https://docs.mosek.com/12.0/rmosek/install-interface.html") else "")
     }
   }
 }

@@ -56,8 +56,10 @@ Main options of `cash()` (all documented in `?cash`):
 - `gd.order = 10`: the number of terms in the noise model.
 - `gd.priority = TRUE`: start from "everything is null" and update the noise model before the
   signal. This is the conservative choice.
-- `solver = "mosek"`: the 2018 algorithm, kept for comparison. It needs Rmosek, REBayes,
-  SQUAREM and a MOSEK licence.
+- `solver = "mosek"` (optional): the 2018 algorithm, kept for comparison. It needs REBayes,
+  SQUAREM, a [MOSEK licence](https://www.mosek.com/products/academic-licenses/) (free for
+  academics) and Rmosek ≥ 10, which is not on CRAN: see
+  [the Rmosek install guide](https://docs.mosek.com/12.0/rmosek/install-interface.html).
 
 ## More
 
